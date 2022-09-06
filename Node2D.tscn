@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Area2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tlp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://oak_woods_v1.0/background/background_layer_1.png" type="Texture" id=5]
+[ext_resource path="res://FONT ASSET/PixelAE-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://oak_woods_v1.0/background/background_layer_3.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 6 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( -1, -1 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -19, 129 )
+collision_layer = 0
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+
+[node name="enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 711, 132 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="lay 1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1000, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/lay 1"]
+position = Vector2( 522, 121 )
+scale = Vector2( 3.2125, 1.31111 )
+texture = ExtResource( 5 )
+
+[node name="lay 2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/lay 2"]
+position = Vector2( -179, 261 )
+scale = Vector2( 1.08125, 1.28889 )
+texture = ExtResource( 7 )
+offset = Vector2( 331.098, -110.948 )
+
+[node name="lay 3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/lay 3"]
+position = Vector2( 167, 257 )
+scale = Vector2( 1.08125, 1.28889 )
+texture = ExtResource( 7 )
+offset = Vector2( 331.098, -110.948 )
+
+[node name="lay 4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 346, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/lay 4"]
+position = Vector2( 157, 257 )
+scale = Vector2( 1.08125, 1.28889 )
+texture = ExtResource( 7 )
+offset = Vector2( 331.098, -110.948 )
+
+[node name="lay 5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 690, 4 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/lay 5"]
+position = Vector2( 157, 257 )
+scale = Vector2( 1.08125, 1.28889 )
+texture = ExtResource( 7 )
+offset = Vector2( 331.098, -110.948 )
+
+[node name="lay 6" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 1034, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/lay 6"]
+position = Vector2( 157, 257 )
+scale = Vector2( 1.08125, 1.28889 )
+texture = ExtResource( 7 )
+offset = Vector2( 331.098, -110.948 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 507.0
+margin_top = 223.0
+margin_right = 662.0
+margin_bottom = 274.0
+custom_fonts/font = SubResource( 12 )
+text = " move "
+align = 1
+
+[node name="tlp" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1649, 193 )
